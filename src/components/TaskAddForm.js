@@ -2,40 +2,40 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addTask } from "../redux/actions/taskActions";
 import "../index.css";
-import { Link } from "react-router-dom";
 
 const TaskAddForm = ({ addTask }) => {
-  const [userId, setUserId] = useState("");
   const [taskName, setTaskName] = useState("");
   const [from, setFromDate] = useState("");
   const [to, setToDate] = useState("");
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
+  const handleSubmit = (e) => {
+    const addedTask = {
+      taskName: taskName,
+      from: from,
+      to: to,
+      type: type,
+      description: description,
+    };
+    setType("");
+    setTaskName("");
+    setFromDate("");
+    setToDate("");
+    setDescription("");
+    addTask(addedTask);
+  };
   return (
     <div>
-      <h3>ADD YOUR TASK</h3>
+      <h3 className="text-center mt-5 task-head">ADD YOUR TASK</h3>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const addedTask = {
-            taskName: taskName,
-            userId: userId,
-            from: from,
-            to: to,
-            type: type,
-            description: description,
-          };
-          setUserId("");
-          setType("");
-          setTaskName("");
-          setFromDate("");
-          setToDate("");
-          setDescription("");
-          addTask(addedTask);
+          handleSubmit(e);
+          // setUserId("");
         }}
         className="mt-5 p-5 add-form col-sm-6 offset-3"
       >
-        <div className="form-group row mb-4">
+        {/* <div className="form-group row mb-4">
           <label className="col-sm-3 col-form-label offset-1">user Id</label>
           <div className="col-sm-8">
             <input
@@ -50,7 +50,7 @@ const TaskAddForm = ({ addTask }) => {
               }}
             />
           </div>
-        </div>
+        </div> */}
         <div className="form-group row mb-4">
           <label className="col-sm-3 col-form-label offset-1">Task Name</label>
           <div className="col-sm-8">
@@ -128,7 +128,7 @@ const TaskAddForm = ({ addTask }) => {
         <div className="text-center">
           <button
             type="submit"
-            className="btn btn-primary text-white ml-2 p-2"
+            className="btn btn-primary text-white ml-2 p-2 pl-1"
             aria-pressed="true"
           >
             Add Task
@@ -139,12 +139,6 @@ const TaskAddForm = ({ addTask }) => {
   );
 };
 
-// export default TaskAddForm;
-// const mapStateToProps = (state) => {
-//   return {
-//     addTask: state.addTask.task,
-//   };
-// };
 const mapDispatchToProps = (dispatch) => {
   return {
     addTask: (addedTask) => dispatch(addTask(addedTask)),

@@ -7,7 +7,6 @@ const initialState = {
 };
 
 export const taskReducer = (state = initialState, { type, payload }) => {
-  console.log(payload);
   switch (type) {
     case ActionTypes.ALL_TASK:
       return { ...state, tasks: payload };
@@ -22,7 +21,7 @@ export const taskReducer = (state = initialState, { type, payload }) => {
     case ActionTypes.EDIT_TASK:
       return {
         tasks: state.tasks.map((task) =>
-          task._id == payload._id ? payload : task
+          task._id === payload._id ? payload : task
         ),
       };
     case ActionTypes.REMOVE_SELECTED_TASK:
@@ -33,15 +32,3 @@ export const taskReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-
-// export const selectedTaskReducer = (state = {}, { type, payload }) => {
-//   console.log(type);
-//   switch (type) {
-//     case ActionTypes.EDIT_TASK:
-//       return { ...state, ...payload };
-//     case ActionTypes.REMOVE_SELECTED_TASK:
-//       return {};
-//     default:
-//       return state;
-//   }
-// };

@@ -1,14 +1,8 @@
 import React from "react";
-// import { useDispatch, useSelector } from "react-redux";
 import TaskDetails from "./TaskComponent";
-// import axios from "axios";
-// import { fetchTasks } from "../redux/actions/taskActions";
-import "../index.css";
-// import { connect } from "react-redux";
 import "../index.css";
 
 const TaskListing = () => {
-  // console.log(tasks);
   return (
     <div className="m-5 p-5 all-task">
       <div className="row mb-2 text-center">

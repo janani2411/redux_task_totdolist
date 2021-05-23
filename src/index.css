@@ -4,7 +4,13 @@
 /* .logo {
   margin-left: 20px;
 } */
-
+.form-inline {
+  float: left;
+}
+.form-head {
+  color: rgb(43, 164, 245);
+  text-shadow: 2px 2px 5px rgb(100, 182, 236);
+}
 .column {
   background: linear-gradient(to right, #a3c2f0, #86d0fb, #a6b2f5);
   border: 3px solid rgb(242, 243, 243);
@@ -23,6 +29,51 @@
   font-weight: 900;
   font-size: 18px;
 }
-.add-form label {
-  border: 1px solid bllack;
+.edit-form label {
+  color: rgb(3, 111, 173);
+  font-weight: bold;
+  font-size: 17px;
+}
+.sign-up-form {
+  border: 5px solid rgb(230, 229, 229);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 10px 10px 20px rgb(147, 167, 173);
+}
+
+.sign-up-form button {
+  background-color: #a6def5;
+  border-color: #a5daeb;
+  border-radius: 20px;
+}
+.sign-up-form button:hover {
+  background-color: #56c8f5;
+  border-color: #6ad0f8;
+  box-shadow: 10px 15px 20px #8dddeb;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transform: translateY(-7px);
+}
+.sign-in-form {
+  border: 5px solid rgb(230, 229, 229);
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 10px 10px 20px rgb(147, 167, 173);
+}
+
+.sign-in-form button {
+  background-color: #3076df;
+  border-color: #426ee7;
+  border-radius: 20px;
+}
+.sign-in-form button:hover {
+  background-color: #328afc;
+  border-color: #6ba9fa;
+  box-shadow: 10px 15px 20px #7ea4f5;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transform: translateY(-2px);
+}
+.task-head {
+  text-shadow: 2px 2px 3px rgb(62, 64, 65);
 }
